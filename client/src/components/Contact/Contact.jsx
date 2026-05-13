@@ -7,14 +7,14 @@ import { API_URL } from "../../config";
 import { 
   FaPhone, 
   FaEnvelope, 
-  FaLocationDot, 
+  FaMapMarkerAlt,
   FaClock, 
-  FaCircleInfo,
+  FaInfoCircle,
   FaWhatsapp, 
   FaInstagram, 
   FaFacebook, 
-  FaXTwitter 
-} from "react-icons/fa6";
+  FaTwitter 
+} from "react-icons/fa";
 const Contact = () => {
   const navigate = useNavigate();
   const urlParams = new URLSearchParams(window.location.search);
@@ -125,12 +125,14 @@ const Contact = () => {
       dateFormat: "Y-m-d",
       minDate: "today",
       allowInput: true,
+      disableMobile: true,
     });
 
     flatpickr("#travel_date_from", {
       dateFormat: "Y-m-d",
       minDate: "today",
       allowInput: true,
+      disableMobile: true,
       onChange: (selectedDates) => {
         if (selectedDates[0]) dateToInstance.set("minDate", selectedDates[0]);
       },
@@ -224,7 +226,7 @@ const getIcon = (key) => {
   } else if (lowerKey.includes("mail")) {
     return <FaEnvelope />;
   } else if (lowerKey.includes("address") || lowerKey.includes("adres")) {
-    return <FaLocationDot />;
+    return <FaMapMarkerAlt />;
   } else if (lowerKey.includes("hour") || lowerKey.includes("saat")) {
     return <FaClock />;
   } else if (lowerKey.includes("whatsapp")) {
@@ -234,10 +236,10 @@ const getIcon = (key) => {
   } else if (lowerKey.includes("facebook")) {
     return <FaFacebook />;
   } else if (lowerKey.includes("twitter") || lowerKey.includes("x")) {
-    return <FaXTwitter />;
+    return <FaTwitter />;
   }
 
-  return <FaCircleInfo />;
+  return <FaInfoCircle />
 };
 
   const filteredCountries = region
@@ -303,7 +305,7 @@ const getIcon = (key) => {
                 return (
                   <div className={styles["info-item"]} key={key}>
                     <div className={styles["info-header"]}>
-                      <i className={getIcon(key)}>{icon}</i>
+                     {icon}
                       <strong>
                         {key
                           .replace(/([A-Z])/g, " $1")
@@ -501,6 +503,7 @@ const getIcon = (key) => {
                         id="travel_date_from"
                         name="date_from"
                         placeholder="dd/mm/yyyy"
+                        autoComplete="off"
                         required
                       />
                     </div>
@@ -515,6 +518,7 @@ const getIcon = (key) => {
                         id="travel_date_to"
                         name="date_to"
                         placeholder="dd/mm/yyyy"
+                        autoComplete="off"
                         required
                       />
                     </div>
