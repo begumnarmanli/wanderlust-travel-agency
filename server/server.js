@@ -7,7 +7,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://wanderlust-travel-2025.netlify.app",
+      "https://wanderlust-travel-agency-three.vercel.app",
       "http://localhost:5173",
     ],
     credentials: true,
