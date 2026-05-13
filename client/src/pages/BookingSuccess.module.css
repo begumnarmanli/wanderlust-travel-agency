@@ -1,0 +1,221 @@
+.successContainer {
+  min-height: 100vh;
+  padding: 80px 20px 40px;
+  background: linear-gradient(
+    135deg,
+    #ff7a6e 0%,
+    #e55e5f 100%
+  ); /* Düzeltildi */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.successWrapper {
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.successIcon {
+  margin: 0 auto 20px;
+  animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successWrapper h1 {
+  font-size: 2.5rem;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+  animation: slideDown 0.6s ease-out 0.2s both;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+  animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.infoBox {
+  background: #fff5f5;
+  border: 2px solid #ff6b6b;
+  border-radius: 12px;
+  padding: 25px;
+  margin: 30px 0;
+  text-align: left;
+  animation: fadeIn 0.6s ease-out 0.6s both;
+}
+
+.infoBox h3 {
+  margin: 0 0 15px 0;
+  color: #ff6b6b;
+  font-size: 1.2rem;
+}
+
+.infoBox ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infoBox li {
+  padding: 10px 0;
+  color: #333;
+  font-size: 1rem;
+  border-bottom: 1px solid #ffe5e5;
+}
+
+.infoBox li:last-child {
+  border-bottom: none;
+}
+
+.sessionInfo {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  animation: fadeIn 0.6s ease-out 0.8s both;
+}
+
+.sessionInfo p {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.sessionInfo strong {
+  color: #333;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.buttonGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 30px 0;
+  animation: fadeIn 0.6s ease-out 1s both;
+}
+
+.btnPrimary,
+.btnSecondary {
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btnPrimary {
+  background: linear-gradient(135deg, #ff7a6e 0%, #e55e5f 100%);
+  color: white;
+}
+
+.btnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.4);
+}
+
+.btnSecondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btnSecondary:hover {
+  background: #d0d0d0;
+}
+
+.supportInfo {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 2px solid #e0e0e0;
+  animation: fadeIn 0.6s ease-out 1.2s both;
+}
+
+.supportInfo p {
+  margin: 0 0 10px 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.supportInfo a {
+  color: #ff6b6b;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.supportInfo a:hover {
+  text-decoration: underline;
+  color: #e55e5f;
+}
+
+.loader {
+  font-size: 1.2rem;
+  color: white;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .successWrapper {
+    padding: 40px 25px;
+  }
+
+  .successWrapper h1 {
+    font-size: 2rem;
+  }
+
+  .buttonGroup {
+    grid-template-columns: 1fr;
+  }
+}

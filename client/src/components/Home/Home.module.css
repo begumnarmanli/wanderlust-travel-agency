@@ -1,0 +1,815 @@
+* {
+  box-sizing: border-box;
+}
+
+/* DESTINATIONS SECTION */
+.destinationsBg {
+  background-color: rgb(250, 248, 245);
+  overflow-x: hidden;
+}
+
+.destinations {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.popularDestination {
+  margin-bottom: 40px;
+}
+
+.destText {
+  color: rgb(107 114 128);
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.destinations h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.subTextPopular {
+  color: rgb(75 85 99);
+  font-weight: 300;
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+.destinationsGrid {
+  display: grid;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+.cardImageWrapper {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.countryTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #ffffff;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.countryTag i {
+  color: #ff6b6b;
+  font-size: 14px;
+}
+
+.cardContent {
+  padding: 15px;
+  text-align: left;
+}
+
+.cardContent h3 {
+  font-size: 18px;
+  margin: 0 0 5px;
+  font-weight: 700;
+  color: #333;
+}
+
+.cardContent .description {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.cardFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 0;
+}
+
+.price {
+  font-size: 18px;
+  color: #ff6b6b;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.priceGroup {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.perPerson {
+  color: #999;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.detailsLink {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: color 0.3s;
+  margin-left: 8px;
+  white-space: nowrap;
+}
+
+.discoverMore {
+  text-align: center;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 14px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  display: inline-block;
+}
+
+.btnPrimary {
+  background-color: #ff6b6b;
+  color: #fff;
+  border: 2px solid #ff6b6b;
+  font-size: 16px;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+.btnPrimary:hover {
+  background-color: #ff8c8c;
+  border-color: #ff8c8c;
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btnSecondary:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* ABOUT SECTION */
+.aboutUsSection {
+  padding: 60px 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.aboutContainer {
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  max-width: 100%;
+}
+
+.aboutImageColumn {
+  order: 2;
+}
+
+.imageContent {
+  background: linear-gradient(135deg, #da5f5f, #ff8c8c);
+  border-radius: 15px;
+  padding: 60px 30px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+}
+
+.imageContent i {
+  color: #fff;
+  font-size: 5rem;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.imageContent p {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.aboutTextColumn {
+  order: 1;
+  padding: 0;
+}
+
+.aboutSubtitle {
+  font-size: 11px;
+  color: #ff6b6b;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.aboutTextColumn h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.aboutParagraph {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.statsGroup {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 25px 0;
+  margin: 30px 0;
+}
+
+.statItem {
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff6b6b;
+  display: block;
+}
+
+.statLabel {
+  font-size: 12px;
+  color: #666;
+  display: block;
+  margin-top: 5px;
+}
+
+.meetTeamBtn {
+  display: block;
+  margin: 15px auto 0 auto;
+  text-align: center;
+  width: fit-content;
+}
+
+/* TESTIMONIALS SECTION */
+.testimonialsSection {
+  background-color: #f7f7f7;
+  padding: 60px 0;
+  overflow-x: hidden;
+}
+
+.testimonialsContainer {
+  margin: 0 auto;
+  padding: 0 20px 60px 20px;
+  text-align: center;
+  position: relative;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.testimonialHeader {
+  margin-bottom: 35px;
+}
+
+.sectionTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #333;
+  display: block;
+}
+
+.quoteIcon {
+  color: #ff6b6b;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+  position: relative;
+  top: 3px;
+  margin: 0 3px;
+}
+
+.testimonialSliderWrapper {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonialTracks {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  width: 100%;
+}
+
+.testimonialCard {
+  background-color: #fff;
+  flex: 0 0 100%;
+  padding: 30px 20px;
+  border-radius: 15px;
+  min-width: 100%;
+  max-width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 99px;
+  width: fit-content;
+  margin: 0 auto 20px auto;
+  gap: 6px;
+}
+
+.ratingBox .stars i {
+  color: #ffc107;
+  font-size: 0.9rem;
+  margin-right: 3px;
+}
+
+.ratingNumber {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-left: 3px;
+}
+
+.reviewText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 25px;
+  word-wrap: break-word;
+}
+
+.authorInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.authorPhoto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.authorName {
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+  font-size: 14px;
+}
+
+.authorLocation {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+}
+
+.sliderControls {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.arrowBtn {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.arrowBtn:hover {
+  background: #ff6b6b;
+  border-color: #ff6b6b;
+  color: #fff;
+}
+
+.nextBtn {
+  background: #ff6b6b;
+  border-color: #ff6b6b;
+  color: #fff;
+}
+
+/* CTA BANNER */
+.ctaBanner {
+  position: relative;
+  background: linear-gradient(to right, #ff7a6e, #e55e5f);
+  padding: 60px 20px;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.planeIcon {
+  position: absolute;
+  opacity: 0.2;
+  font-size: 3rem;
+  color: white;
+  top: 15px;
+  left: 20px;
+  transform: rotate(25deg);
+  z-index: 1;
+}
+
+.shipIcon {
+  position: absolute;
+  opacity: 0.2;
+  font-size: 3rem;
+  color: white;
+  bottom: 10px;
+  right: 20px;
+  transform: rotate(20deg);
+  z-index: 1;
+}
+
+.ctaContainer {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.ctaBanner h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.ctaBanner p {
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+.ctaBtn {
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: white;
+  color: #e55e5f;
+  border: none;
+  border-radius: 50px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .destinationsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+  }
+
+  .shipIcon {
+    bottom: 40px;
+    right: 30px;
+  }
+
+  .planeIcon {
+    top: 40px;
+    left: 20px;
+  }
+
+  .aboutSubtitle {
+    text-align: center;
+  }
+
+  .aboutTextColumn h2 {
+    text-align: center;
+  }
+
+  .aboutParagraph {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .destinations {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .destText {
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+  }
+
+  .destinations h2 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .subTextPopular {
+    font-size: 18px;
+  }
+
+  .destinationsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1400px;
+    margin-bottom: 50px;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+  }
+
+  .countryTag {
+    top: 15px;
+    left: 15px;
+    font-size: 13px;
+  }
+
+  .cardContent {
+    text-align: left;
+  }
+
+  .cardContent h3 {
+    font-size: 22px;
+  }
+
+  .cardContent .description {
+    font-size: 14px;
+  }
+
+  .cardFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .perPerson {
+    font-size: 14px;
+  }
+  .discoverMore .btnPrimary {
+    font-size: 17px;
+  }
+  .detailsLink {
+    font-size: 15px;
+  }
+
+  .detailsLink:hover {
+    color: #e04a4a;
+  }
+
+  .btnPrimary {
+    font-size: 18px;
+  }
+
+  .btnPrimary:hover {
+    background-color: #e04a4a;
+    border-color: #e04a4a;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+  .aboutUsSection {
+    padding: 100px 0;
+  }
+
+  .aboutContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 60px;
+    align-items: stretch;
+  }
+
+  .imageContent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .imageContent i {
+    font-size: 8rem;
+    margin-bottom: 24px;
+    padding: 15px;
+  }
+
+  .imageContent p {
+    font-size: 24px;
+  }
+
+  .aboutTextColumn {
+    flex: 1 1 auto;
+  }
+
+  .aboutSubtitle {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .aboutTextColumn h2 {
+    font-size: 2.25rem;
+    margin-bottom: 25px;
+  }
+
+  .aboutParagraph {
+    font-size: 16px;
+  }
+
+  .statNumber {
+    font-size: 3rem;
+  }
+
+  .statLabel {
+    font-size: 14px;
+  }
+
+  .testimonialsSection {
+    padding: 128px 0;
+  }
+
+  .testimonialsContainer {
+    padding: 0 20px 80px 20px;
+  }
+
+  .testimonialHeader {
+    margin-bottom: 50px;
+  }
+
+  .sectionTitle {
+    font-size: 2.25rem;
+  }
+
+  .quoteIcon {
+    font-size: 3rem;
+    top: 5px;
+    margin: 0 5px;
+  }
+
+  .testimonialSliderWrapper {
+    max-width: 800px;
+  }
+
+  .testimonialTracks {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .testimonialCard {
+    max-width: 800px;
+    padding: 40px;
+  }
+
+  .ratingBox {
+    margin: 0 auto 25px auto;
+    gap: 8px;
+  }
+
+  .ratingBox .stars i {
+    font-size: 1rem;
+    margin-right: 5px;
+  }
+
+  .ratingNumber {
+    font-size: 1rem;
+    margin-left: 5px;
+  }
+
+  .reviewText {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  .authorInfo {
+    margin-top: 30px;
+  }
+
+  .authorPhoto {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+  }
+
+  .authorLocation {
+    font-size: 0.9rem;
+  }
+
+  .arrowBtn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ctaBanner {
+    padding: 100px 20px;
+  }
+
+  .planeIcon {
+    opacity: 0.3;
+    font-size: 5rem;
+    top: 80px;
+    left: 100px;
+  }
+
+  .shipIcon {
+    opacity: 0.3;
+    font-size: 5rem;
+    bottom: 80px;
+    right: 100px;
+  }
+
+  .ctaBanner h2 {
+    font-size: 2.5rem;
+  }
+
+  .ctaBtn:hover {
+    color: #f7f7f7;
+    background-color: #cc4d4d;
+  }
+}

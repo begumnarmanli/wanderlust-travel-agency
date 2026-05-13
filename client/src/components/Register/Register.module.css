@@ -1,0 +1,316 @@
+.registerPage {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f88d8d 0%, #ef6c6c 100%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.registerPage::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/login-map-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  filter: grayscale(100%) invert(1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.registerHeader,
+.registerContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.registerHeader {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.registerNavContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto;
+}
+
+.registerLogo img {
+  width: 35px;
+  height: 35px;
+}
+
+.registerLogo span {
+  font-size: 18px;
+}
+
+.registerContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.registerBox {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 2.5rem 1.5rem;
+  width: 100%;
+  max-width: 380px;
+}
+
+.registerForm h2 {
+  font-size: 1.75rem;
+  color: #333;
+  text-align: center;
+}
+
+.registerSubtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.registerFormGroup {
+  margin-bottom: 1.5rem;
+}
+
+.registerFormGroup label {
+  display: block;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.registerFormGroup input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.registerFormGroup input:focus {
+  outline: none;
+  border-color: #ff5a5f;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.errorMessage {
+  background: #fee;
+  color: #c33;
+  padding: 0.875rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.registerBtn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #ff8c8c 0%, #da5f5f 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 1rem;
+}
+
+.registerBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 107, 107, 0.75);
+}
+
+.signupLink {
+  text-align: center;
+  margin-top: 1.25rem;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.signupLink a {
+  color: #f35151;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.signupLink a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .registerHeader {
+    padding: 1.75rem 3rem;
+  }
+  .registerNavContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .registerLogo {
+    margin: 0;
+  }
+  .registerLogo span {
+    font-size: 1.75rem;
+  }
+
+  .registerLogo img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .registerContainer {
+    padding: 5rem 2rem;
+    justify-content: center;
+  }
+
+  .registerBox {
+    max-width: 550px;
+    padding: 3.5rem 3rem;
+  }
+
+  .registerForm h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .registerSubtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .registerFormGroup {
+    margin-bottom: 1.75rem;
+  }
+
+  .registerFormGroup label {
+    font-size: 1.2rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .registerFormGroup input {
+    padding: 1.15rem 1.35rem;
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+  .registerFormGroup input::placeholder {
+    font-size: 1.15rem;
+  }
+  .registerBtn {
+    padding: 1.25rem;
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+  }
+
+  .signupLink {
+    margin-top: 1.75rem;
+    font-size: 1.3em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .registerHeader {
+    padding: 0.5rem 3rem;
+  }
+  .registerNavContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .registerLogo {
+    margin: 0;
+  }
+  .registerLogo span {
+    font-size: 1.75rem;
+  }
+
+  .registerLogo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .registerContainer {
+    padding: 2rem 2rem;
+    justify-content: center;
+  }
+
+  .registerBox {
+    max-width: 450px;
+    padding: 2rem 3rem;
+  }
+
+  .registerForm h2 {
+    font-size: 2.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .registerSubtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .registerFormGroup {
+    margin-bottom: 1rem;
+  }
+
+  .registerFormGroup label {
+    font-size: 1rem;
+    margin-bottom: 0.65rem;
+  }
+
+  .registerFormGroup input {
+    padding: 0.5rem 1rem;
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  .registerFormGroup input::placeholder {
+    font-size: 1.15rem;
+  }
+
+  .registerBtn {
+    padding: 1rem;
+    font-size: 1.2rem;
+    margin-top: 0.3rem;
+  }
+
+  .signupLink {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,351 @@
+.mainContent {
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destinationsHeroSection {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/images/destinations-map-bg.webp") no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  padding-top: 30px;
+}
+
+.heroContent h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.heroContent p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.filterSection {
+  background-color: rgb(250, 248, 245);
+}
+
+.filterButtons {
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 20px 10px;
+  box-shadow: inset -15px 0 15px -10px rgba(0, 0, 0, 0.2);
+}
+
+.filterBtn {
+  flex-shrink: 0;
+  padding: 8px 15px;
+  border: none;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-family: inherit;
+}
+
+.filterBtn.active,
+.filterBtn:hover {
+  background-color: #ff6347;
+  color: white;
+}
+
+.destinationsCardsSection {
+  padding: 40px 20px;
+  background-color: #fcfcfc;
+}
+
+.destinationsGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
+
+.destinationCard {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.destinationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.cardImg {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  aspect-ratio: 16 / 9;
+  content-visibility: auto;
+}
+
+.locationTag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.durationTag {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: #ff6347;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.cardContent {
+  padding: 20px 20px 25px;
+}
+
+.cardContent h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding-top: 10px;
+}
+
+.features span {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.priceInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.priceDetails {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff6347;
+}
+
+.perPerson {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.bookBtn {
+  display: inline-block;
+  background-color: #ff6347;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.bookBtn:hover {
+  background-color: #e5533d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 99, 71, 0.3);
+}
+
+.ctaBanner {
+  position: relative;
+  background: linear-gradient(to right, #ff7a6e, #e55e5f);
+  padding: 60px 20px;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.ctaContainer {
+  position: relative;
+  z-index: 2;
+}
+
+.ctaContainer h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.ctaContainer p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.planeIcon {
+  position: absolute;
+  opacity: 0.2;
+  font-size: 3rem;
+  top: 15px;
+  left: 20px;
+  transform: rotate(25deg);
+}
+
+.shipIcon {
+  position: absolute;
+  opacity: 0.2;
+  font-size: 3rem;
+  bottom: 7px;
+  right: 20px;
+  transform: rotate(20deg);
+}
+
+.ctaBtn {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: white;
+  color: #e55e5f;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.favoriteBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 22px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  outline: none;
+}
+
+.favoriteBtn:hover {
+  transform: scale(1.2);
+}
+
+.favoriteBtn.isFavorite {
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(255, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .priceInfo {
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .priceDetails {
+    gap: 30px;
+  }
+  .bookBtn {
+    width: 100%;
+    padding: 12px 20px;
+  }
+  .heroContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .filterButtons {
+    justify-content: center;
+    box-shadow: none;
+  }
+
+  .destinationsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ctaContainer h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroContent h1 {
+    font-size: 3rem;
+  }
+
+  .destinationsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .ctaContainer h2 {
+    font-size: 2.5rem;
+  }
+
+  .planeIcon,
+  .shipIcon {
+    font-size: 5rem;
+  }
+}

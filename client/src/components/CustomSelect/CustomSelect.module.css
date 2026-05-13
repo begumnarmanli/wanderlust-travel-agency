@@ -1,0 +1,241 @@
+.customSelectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.customSelectTrigger {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f1f3f5 100%);
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  min-height: 44px;
+}
+
+.customSelectTrigger:hover {
+  background: linear-gradient(135deg, #f1f3f5 0%, #e9ecef 100%);
+  border-color: #dee2e6;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.customSelectTrigger.open {
+  border-color: #ff6b6b;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+}
+
+.selectIcon {
+  font-size: 1rem;
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.customSelectTrigger.open .selectIcon {
+  color: #ff6b6b;
+}
+
+.selectedText {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.customSelectTrigger.open .selectedText {
+  color: #1e293b;
+}
+
+.arrowIcon {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.arrowIcon.rotate {
+  transform: rotate(180deg);
+  color: #ff6b6b;
+}
+
+.customSelectTrigger:hover .arrowIcon:not(.rotate) {
+  color: #ff6b6b;
+}
+
+.customDropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  overflow: hidden;
+  animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.customOption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  color: #334155;
+  border-bottom: 1px solid #f1f5f9;
+  position: relative;
+}
+
+.customOption:last-child {
+  border-bottom: none;
+}
+
+.customOption.first {
+  font-weight: 600;
+  color: #1e293b;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.05) 0%,
+    rgba(238, 90, 111, 0.05) 100%
+  );
+}
+
+.customOption:not(.first):hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 107, 0.08) 0%,
+    rgba(238, 90, 111, 0.08) 100%
+  );
+  color: #ff6b6b;
+  padding-left: 1.2rem;
+}
+
+.customOption.active {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  font-weight: 600;
+}
+
+.customOption.active:hover {
+  padding-left: 1rem;
+  background: linear-gradient(135deg, #ee5a6f 0%, #dc3545 100%);
+}
+
+.customOption i:first-child {
+  font-size: 0.95rem;
+  width: 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.checkIcon {
+  margin-left: auto;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.customDropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.customDropdown::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+.customDropdown::-webkit-scrollbar-thumb {
+  background: #dee2e6;
+  border-radius: 10px;
+}
+
+.customDropdown::-webkit-scrollbar-thumb:hover {
+  background: #ff6b6b;
+}
+
+@media (min-width: 768px) {
+  .customSelectWrapper {
+    width: auto;
+    min-width: 180px;
+  }
+
+  .customSelectTrigger {
+    padding: 0.8rem 1.1rem;
+  }
+
+  .selectIcon {
+    font-size: 1.05rem;
+  }
+
+  .selectedText {
+    font-size: 0.88rem;
+  }
+
+  .arrowIcon {
+    font-size: 0.75rem;
+  }
+
+  .customOption {
+    padding: 0.9rem 1.1rem;
+    font-size: 0.88rem;
+  }
+
+  .customOption:not(.first):hover {
+    padding-left: 1.3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .customSelectWrapper {
+    min-width: 200px;
+  }
+
+  .customSelectTrigger {
+    padding: 0.85rem 1.2rem;
+    border-radius: 12px;
+  }
+
+  .selectedText {
+    font-size: 0.9rem;
+  }
+
+  .arrowIcon {
+    font-size: 0.8rem;
+  }
+
+  .customDropdown {
+    border-radius: 14px;
+    max-height: 320px;
+  }
+
+  .customOption {
+    padding: 0.95rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .customOption:not(.first):hover {
+    padding-left: 1.4rem;
+  }
+}

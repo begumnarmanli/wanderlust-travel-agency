@@ -1,0 +1,642 @@
+.dashboard {
+  padding: 0;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.statCard {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.statCardBlue {
+  border-left: 4px solid #007bff;
+}
+
+.statCardYellow {
+  border-left: 4px solid #ffc107;
+}
+
+.statCardGreen {
+  border-left: 4px solid #28a745;
+}
+
+.statCardCyan {
+  border-left: 4px solid #17a2b8;
+}
+
+.statIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.statIconBlue {
+  background: #e7f3ff;
+}
+
+.statIconBlue i {
+  color: #007bff;
+}
+
+.statIconYellow {
+  background: #fff9e6;
+}
+
+.statIconYellow i {
+  color: #ffc107;
+}
+
+.statIconGreen {
+  background: #e8f5e9;
+}
+
+.statIconGreen i {
+  color: #28a745;
+}
+
+.statIconCyan {
+  background: #e6f7f9;
+}
+
+.statIconCyan i {
+  color: #17a2b8;
+}
+
+.statContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: #666;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1;
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.chartCard {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  min-height: 360px;
+}
+
+.chartTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.chartTitle i {
+  color: #007bff;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.chartWrapper {
+  width: 100%;
+  height: 280px;
+  min-height: 280px;
+  position: relative;
+  flex: 1;
+}
+
+.recentSection {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionTitle i {
+  color: #007bff;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.recentList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.recentItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.recentItem:hover {
+  background: #e9ecef;
+}
+
+.recentIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.recentDetails {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.recentName {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.3;
+}
+
+.recentInfo {
+  font-size: 0.75rem;
+  color: #666;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.recentMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.recentStatus {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.confirmed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.cancelled {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.recentDate {
+  font-size: 0.7rem;
+  color: #999;
+  white-space: nowrap;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.loading i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.recentStatus.confirmed,
+.recentStatus.completed,
+.recentStatus.paid {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.recentStatus.pending,
+.recentStatus.processing {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.recentStatus.cancelled,
+.recentStatus.rejected,
+.recentStatus.unpaid {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.recentStatus.new {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.statIcon.blue {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.statIcon.green {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.statIcon.orange {
+  background: linear-gradient(135deg, #fd7e14 0%, #ffc107 100%);
+  color: white;
+}
+
+.statIcon.red {
+  background: linear-gradient(135deg, #dc3545 0%, #e83e8c 100%);
+  color: white;
+}
+
+.statIcon.purple {
+  background: linear-gradient(135deg, #6f42c1 0%, #e83e8c 100%);
+  color: white;
+}
+
+.statIcon.cyan {
+  background: linear-gradient(135deg, #17a2b8 0%, #20c997 100%);
+  color: white;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #999;
+}
+
+.emptyState i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ddd;
+  display: block;
+}
+
+.emptyState p {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .statCard {
+    padding: 1.2rem;
+    gap: 1rem;
+  }
+
+  .statIcon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.4rem;
+  }
+
+  .statLabel {
+    font-size: 0.8rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .statValue {
+    font-size: 1.8rem;
+  }
+
+  .chartsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .chartCard {
+    padding: 1.5rem;
+    min-height: 400px;
+  }
+
+  .chartTitle {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .chartTitle i {
+    font-size: 0.95rem;
+  }
+
+  .chartWrapper {
+    height: 320px;
+    min-height: 320px;
+  }
+
+  .recentSection {
+    padding: 1.2rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .sectionTitle i {
+    font-size: 0.95rem;
+  }
+
+  .recentList {
+    gap: 0.9rem;
+  }
+
+  .recentItem {
+    padding: 0.9rem;
+    gap: 0.9rem;
+  }
+
+  .recentIcon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .recentName {
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .recentInfo {
+    font-size: 0.8rem;
+  }
+
+  .recentMeta {
+    gap: 0.45rem;
+  }
+
+  .recentStatus {
+    padding: 4px 11px;
+    font-size: 0.72rem;
+  }
+
+  .recentDate {
+    font-size: 0.75rem;
+  }
+
+  .loading {
+    padding: 2.5rem;
+    font-size: 1rem;
+  }
+
+  .loading i {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .emptyState {
+    padding: 3rem 1.5rem;
+  }
+
+  .emptyState i {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .emptyState p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .statsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .statCard {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .statCard:hover {
+    transform: translateY(-4px);
+  }
+
+  .statIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+  }
+
+  .statLabel {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .statValue {
+    font-size: 2rem;
+  }
+
+  .chartsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .chartCard {
+    padding: 1.5rem;
+    min-height: 420px;
+  }
+
+  .chartTitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .chartTitle i {
+    font-size: 1rem;
+  }
+
+  .chartWrapper {
+    height: 340px;
+    min-height: 340px;
+  }
+
+  .recentSection {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionTitle i {
+    font-size: 1rem;
+  }
+
+  .recentList {
+    gap: 1rem;
+  }
+
+  .recentItem {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .recentIcon {
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+  }
+
+  .recentName {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .recentInfo {
+    font-size: 0.85rem;
+  }
+
+  .recentMeta {
+    gap: 0.5rem;
+  }
+
+  .recentStatus {
+    padding: 4px 12px;
+    font-size: 0.75rem;
+  }
+
+  .recentDate {
+    font-size: 0.8rem;
+  }
+
+  .loading {
+    padding: 3rem;
+    font-size: 1.1rem;
+  }
+
+  .loading i {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .emptyState {
+    padding: 4rem 2rem;
+  }
+
+  .emptyState i {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .emptyState p {
+    font-size: 1.1rem;
+  }
+}
