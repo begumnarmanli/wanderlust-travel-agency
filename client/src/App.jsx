@@ -33,7 +33,7 @@ function AppContent() {
   return (
     <>
       {!hideNavAndFooter && <Navbar />}
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<div style={{minHeight: "100vh"}} />}>
         <Routes>
           <Route
             path="/admin"
