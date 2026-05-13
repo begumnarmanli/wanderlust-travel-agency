@@ -4,17 +4,17 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import styles from "./Contact.module.css";
 import { API_URL } from "../../config";
-import { 
-  FaPhone, 
-  FaEnvelope, 
+import {
+  FaPhone,
+  FaEnvelope,
   FaMapMarkerAlt,
-  FaClock, 
+  FaClock,
   FaInfoCircle,
-  FaWhatsapp, 
-  FaInstagram, 
-  FaFacebook, 
-  FaTwitter 
+  FaWhatsapp,
+  FaInstagram,
+  FaFacebookF,
 } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 const Contact = () => {
   const navigate = useNavigate();
   const urlParams = new URLSearchParams(window.location.search);
@@ -218,29 +218,28 @@ const Contact = () => {
     ? regions.find((r) => r._id === selectedContactRegion)?.contactDetails || {}
     : globalContactInfo;
 
-const getIcon = (key) => {
-  const lowerKey = key.toLowerCase();
+  const getIcon = (key) => {
+    const lowerKey = key.toLowerCase();
 
-  if (lowerKey.includes("phone") || lowerKey.includes("tel")) {
-    return <FaPhone />;
-  } else if (lowerKey.includes("mail")) {
-    return <FaEnvelope />;
-  } else if (lowerKey.includes("address") || lowerKey.includes("adres")) {
-    return <FaMapMarkerAlt />;
-  } else if (lowerKey.includes("hour") || lowerKey.includes("saat")) {
-    return <FaClock />;
-  } else if (lowerKey.includes("whatsapp")) {
-    return <FaWhatsapp />;
-  } else if (lowerKey.includes("instagram")) {
-    return <FaInstagram />;
-  } else if (lowerKey.includes("facebook")) {
-    return <FaFacebook />;
-  } else if (lowerKey.includes("twitter") || lowerKey.includes("x")) {
-    return <FaTwitter />;
-  }
+    if (lowerKey.includes("phone") || lowerKey.includes("tel")) {
+      return <FaPhone />;
+    } else if (lowerKey.includes("mail")) {
+      return <FaEnvelope />;
+    } else if (lowerKey.includes("address") || lowerKey.includes("adres")) {
+      return <FaMapMarkerAlt />;
+    } else if (lowerKey.includes("hour") || lowerKey.includes("saat")) {
+      return <FaClock />;
+    } else if (lowerKey.includes("whatsapp")) {
+      return <FaWhatsapp />;
+    } else if (lowerKey.includes("instagram")) {
+      return <FaInstagram />;
+    } else if (lowerKey.includes("facebook")) {
+      return <FaFacebookF />;
+    } else if (lowerKey.includes("twitter") || lowerKey.includes("x")) {
+      return <FaXTwitter />;}
 
-  return <FaInfoCircle />
-};
+    return <FaInfoCircle />;
+  };
 
   const filteredCountries = region
     ? availableCountries.filter((c) => c.region === region)
@@ -305,7 +304,7 @@ const getIcon = (key) => {
                 return (
                   <div className={styles["info-item"]} key={key}>
                     <div className={styles["info-header"]}>
-                     {icon}
+                      {icon}
                       <strong>
                         {key
                           .replace(/([A-Z])/g, " $1")
@@ -351,7 +350,10 @@ const getIcon = (key) => {
                         rel="noreferrer"
                         className={styles["social-icon"]}
                       >
-                        <i className={`fa-brands fa-${iconName}`}></i>
+                        {iconName === "instagram" && <FaInstagram />}
+                        {iconName === "facebook" && <FaFacebookF />}
+                        {iconName === "whatsapp" && <FaWhatsapp />}
+                        {iconName === "x-twitter" && <FaXTwitter />}
                       </a>
                     );
                   }

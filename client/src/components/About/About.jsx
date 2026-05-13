@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaHeart, FaShieldAlt, FaHeadset, FaLeaf } from "react-icons/fa";
 import styles from "./About.module.css";
 
 const About = () => {
@@ -91,7 +92,7 @@ const About = () => {
           <div className={styles["values-grid"]}>
             <div className={styles["value-card"]}>
               <div className={styles["value-icon"]}>
-                <i className="fas fa-heart"></i>
+                <FaHeart />
               </div>
               <h3>Passion for Travel</h3>
               <p>
@@ -103,7 +104,7 @@ const About = () => {
 
             <div className={styles["value-card"]}>
               <div className={styles["value-icon"]}>
-                <i className="fas fa-shield-alt"></i>
+                <FaShieldAlt />
               </div>
               <h3>Trust & Safety</h3>
               <p>
@@ -114,7 +115,7 @@ const About = () => {
 
             <div className={styles["value-card"]}>
               <div className={styles["value-icon"]}>
-                <i className="fas fa-headset"></i>
+                <FaHeadset />
               </div>
               <h3>7/24 Support</h3>
               <p>
@@ -125,7 +126,7 @@ const About = () => {
 
             <div className={styles["value-card"]}>
               <div className={styles["value-icon"]}>
-                <i className="fas fa-leaf"></i>
+                <FaLeaf />
               </div>
               <h3>Sustainable Tourism</h3>
               <p>
