@@ -120,7 +120,7 @@
 
 .price {
   font-size: 18px;
-  color: #ff6b6b;
+  color: #c0392b;
   font-weight: 700;
   margin-right: 5px;
 }
@@ -132,13 +132,13 @@
 }
 
 .perPerson {
-  color: #999;
+  color: #666;
   font-size: 12px;
   font-weight: 400;
 }
 
 .detailsLink {
-  color: #ff6b6b;
+  color: #c0392b;
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;

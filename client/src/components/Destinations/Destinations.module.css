@@ -180,12 +180,12 @@
 .price {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #ff6347;
+  color: #c0392b;
 }
 
 .perPerson {
   font-size: 0.75rem;
-  color: #888;
+  color: #666;
 }
 
 .bookBtn {

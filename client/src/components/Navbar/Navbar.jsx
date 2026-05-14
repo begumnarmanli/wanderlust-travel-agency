@@ -10,7 +10,7 @@ function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
   const [userRole, setUserRole] = useState(localStorage.getItem("role"));
   const [userName, setUserName] = useState(
-    localStorage.getItem("userName") || "User"
+    localStorage.getItem("userName") || "User",
   );
 
   useEffect(() => {
@@ -64,7 +64,11 @@ function Navbar() {
             <span>Wanderlust</span>
           </NavLink>
 
-          <button className={styles.menuToggle} onClick={toggleMenu}>
+          <button
+            className={styles.menuToggle}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
             <span className={styles.hamburgerIcon}></span>
           </button>
 
