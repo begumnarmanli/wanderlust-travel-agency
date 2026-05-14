@@ -165,16 +165,16 @@
 }
 
 .btnPrimary {
-  background-color: #ff6b6b;
+  background-color: #d94f4f;
   color: #fff;
-  border: 2px solid #ff6b6b;
+  border: 2px solid #d94f4f;
   font-size: 16px;
-  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 5px 15px rgba(217, 79, 79, 0.4);
 }
 
 .btnPrimary:hover {
-  background-color: #ff8c8c;
-  border-color: #ff8c8c;
+  background-color: #c44545;
+  border-color: #c44545;
 }
 
 .btnSecondary {
@@ -412,7 +412,7 @@
 
 .authorLocation {
   font-size: 0.8rem;
-  color: #888;
+  color: #555;
   margin: 0;
 }
 

@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../Hero/Hero";
-import { FaGlobe, FaStar, FaArrowLeft, FaArrowRight, FaPlane, FaShip } from "react-icons/fa";
+import {
+  FaGlobe,
+  FaStar,
+  FaArrowLeft,
+  FaArrowRight,
+  FaPlane,
+  FaShip,
+} from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import styles from "./Home.module.css";
 
@@ -255,12 +262,14 @@ const Home = () => {
               <button
                 className={`${styles.arrowBtn} ${styles.prevBtn}`}
                 onClick={prevSlide}
+                aria-label="Previous slide"
               >
                 <FaArrowLeft />
               </button>
               <button
                 className={`${styles.arrowBtn} ${styles.nextBtn}`}
                 onClick={nextSlide}
+                aria-label="Next slide"
               >
                 <FaArrowRight />
               </button>
