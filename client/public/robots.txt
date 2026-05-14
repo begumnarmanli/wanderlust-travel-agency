@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wanderlust-travel-agency-three.vercel.app/sitemap.xml
