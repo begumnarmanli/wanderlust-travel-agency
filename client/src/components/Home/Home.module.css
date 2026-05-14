@@ -238,7 +238,7 @@
 
 .aboutSubtitle {
   font-size: 11px;
-  color: #ff6b6b;
+  color: #c0392b;
   letter-spacing: 0.1em;
   font-weight: 700;
   margin-bottom: 8px;
@@ -277,7 +277,7 @@
 .statNumber {
   font-size: 2rem;
   font-weight: 700;
-  color: #ff6b6b;
+  color: #c0392b;
   display: block;
 }
 
