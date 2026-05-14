@@ -4,6 +4,7 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 import styles from "./Booking.module.css";
 import { API_URL } from "../config";
+
 function Booking() {
   const [searchParams] = useSearchParams();
 
@@ -18,6 +19,7 @@ function Booking() {
   const urlDateTo = searchParams.get("dateTo");
   const urlNumberOfPeople = searchParams.get("numberOfPeople");
   const urlSpecialRequests = searchParams.get("specialRequests");
+
   const [formData, setFormData] = useState({
     tourId: urlTourId || "",
     tourName: urlTourName || "",
@@ -33,7 +35,13 @@ function Booking() {
     specialRequests: urlSpecialRequests || "",
   });
 
-  const [totalPrice, setTotalPrice] = useState(0);
+  const totalPrice = (() => {
+    if (formData.basePrice <= 0) return 0;
+    let price = formData.basePrice * formData.numberOfPeople;
+    if (formData.numberOfPeople >= 4) price *= 0.9;
+    return Math.round(price);
+  })();
+
   const [showPayment, setShowPayment] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -45,11 +53,8 @@ function Booking() {
     const fetchTourDetails = async () => {
       if (urlTourId && !urlCountry && !urlRegion) {
         try {
-          const response = await fetch(
-            `${API_URL}/api/destinations/${urlTourId}`,
-          );
+          const response = await fetch(`${API_URL}/api/destinations/${urlTourId}`);
           const data = await response.json();
-
           if (data) {
             setFormData((prev) => ({
               ...prev,
@@ -64,11 +69,9 @@ function Booking() {
         }
       }
     };
-
     fetchTourDetails();
-  }, [urlTourId, urlCountry, urlRegion]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [urlTourId, urlCountry, urlRegion]);
 
-  // Flatpickr initialization
   useEffect(() => {
     const dateFromEl = dateFromRef.current;
     const dateToEl = dateToRef.current;
@@ -110,30 +113,12 @@ function Booking() {
     };
   }, [formData.dateFrom, formData.dateTo]);
 
-  useEffect(() => {
-    if (formData.basePrice > 0) {
-      let price = formData.basePrice * formData.numberOfPeople;
-
-      if (formData.numberOfPeople >= 4) {
-        price *= 0.9;
-      }
-
-      setTotalPrice(Math.round(price));
-    }
-  }, [formData.basePrice, formData.numberOfPeople]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!formData.tourId) {
-      setError("Please select a tour");
-      return;
-    }
+    if (!formData.tourId) { setError("Please select a tour"); return; }
     if (!formData.name || !formData.email || !formData.dateFrom) {
-      setError("Please fill all required fields");
-      return;
+      setError("Please fill all required fields"); return;
     }
-
     setError("");
     setShowPayment(true);
   };
@@ -141,42 +126,32 @@ function Booking() {
   const handlePayment = async () => {
     setLoading(true);
     setError("");
-
     try {
       const token = localStorage.getItem("token");
-
-      const response = await fetch(
-        `${API_URL}/api/stripe/create-checkout-session`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
-          },
-          body: JSON.stringify({
-            tourId: formData.tourId,
-            tourName: formData.tourName,
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            country: formData.country,
-            region: formData.region,
-            dateFrom: formData.dateFrom,
-            dateTo: formData.dateTo,
-            numberOfPeople: formData.numberOfPeople,
-            specialRequests: formData.specialRequests,
-            basePrice: formData.basePrice,
-            totalPrice: totalPrice,
-          }),
+      const response = await fetch(`${API_URL}/api/stripe/create-checkout-session`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
-      );
-
+        body: JSON.stringify({
+          tourId: formData.tourId,
+          tourName: formData.tourName,
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          country: formData.country,
+          region: formData.region,
+          dateFrom: formData.dateFrom,
+          dateTo: formData.dateTo,
+          numberOfPeople: formData.numberOfPeople,
+          specialRequests: formData.specialRequests,
+          basePrice: formData.basePrice,
+          totalPrice: totalPrice,
+        }),
+      });
       const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to create checkout session");
-      }
-
+      if (!response.ok) throw new Error(data.error || "Failed to create checkout session");
       if (data.url) {
         window.location.href = data.url;
       } else {
@@ -188,6 +163,7 @@ function Booking() {
       setLoading(false);
     }
   };
+
   return (
     <div className={styles.bookingContainer}>
       <div className={styles.bookingWrapper}>
@@ -210,21 +186,16 @@ function Booking() {
                 <input
                   type="text"
                   value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
                 />
               </div>
-
               <div className={styles.formGroup}>
                 <label>Email *</label>
                 <input
                   type="email"
                   value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
                 />
               </div>
@@ -236,32 +207,21 @@ function Booking() {
                 <input
                   type="tel"
                   value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
-                  }
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="+1 234 567 8900"
                 />
               </div>
-
               <div className={styles.formGroup}>
                 <label>Country *</label>
                 <input
                   type="text"
                   value={formData.country}
-                  onChange={(e) =>
-                    setFormData({ ...formData, country: e.target.value })
-                  }
+                  onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                   required
                   readOnly={!!(urlCountry || (urlTourId && formData.country))}
                   style={{
-                    backgroundColor:
-                      urlCountry || (urlTourId && formData.country)
-                        ? "#f5f5f5"
-                        : "white",
-                    cursor:
-                      urlCountry || (urlTourId && formData.country)
-                        ? "not-allowed"
-                        : "text",
+                    backgroundColor: urlCountry || (urlTourId && formData.country) ? "#f5f5f5" : "white",
+                    cursor: urlCountry || (urlTourId && formData.country) ? "not-allowed" : "text",
                   }}
                 />
               </div>
@@ -272,45 +232,26 @@ function Booking() {
               <input
                 type="text"
                 value={formData.region}
-                onChange={(e) =>
-                  setFormData({ ...formData, region: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, region: e.target.value })}
                 readOnly={!!(urlRegion || (urlTourId && formData.region))}
                 style={{
-                  backgroundColor:
-                    urlRegion || (urlTourId && formData.region)
-                      ? "#f5f5f5"
-                      : "white",
-                  cursor:
-                    urlRegion || (urlTourId && formData.region)
-                      ? "not-allowed"
-                      : "text",
+                  backgroundColor: urlRegion || (urlTourId && formData.region) ? "#f5f5f5" : "white",
+                  cursor: urlRegion || (urlTourId && formData.region) ? "not-allowed" : "text",
                 }}
               />
             </div>
 
-            {/* FLATPICKR */}
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
                 <label>Start Date *</label>
                 <div className={styles.dateInputWrapper}>
-                  <input
-                    ref={dateFromRef}
-                    type="text"
-                    placeholder="Select date"
-                    required
-                  />
+                  <input ref={dateFromRef} type="text" placeholder="Select date" required />
                 </div>
               </div>
-
               <div className={styles.formGroup}>
                 <label>End Date</label>
                 <div className={styles.dateInputWrapper}>
-                  <input
-                    ref={dateToRef}
-                    type="text"
-                    placeholder="Select date"
-                  />
+                  <input ref={dateToRef} type="text" placeholder="Select date" />
                 </div>
               </div>
             </div>
@@ -319,12 +260,7 @@ function Booking() {
               <label>Number of People *</label>
               <select
                 value={formData.numberOfPeople}
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    numberOfPeople: Number(e.target.value),
-                  })
-                }
+                onChange={(e) => setFormData({ ...formData, numberOfPeople: Number(e.target.value) })}
               >
                 {[...Array(20)].map((_, i) => (
                   <option key={i + 1} value={i + 1}>
@@ -338,9 +274,7 @@ function Booking() {
               <label>Special Requests</label>
               <textarea
                 value={formData.specialRequests}
-                onChange={(e) =>
-                  setFormData({ ...formData, specialRequests: e.target.value })
-                }
+                onChange={(e) => setFormData({ ...formData, specialRequests: e.target.value })}
                 rows="4"
                 placeholder="Dietary requirements, accessibility needs, etc."
               />
@@ -353,21 +287,13 @@ function Booking() {
                   <span>Base Price × {formData.numberOfPeople} people</span>
                   <span>${formData.basePrice * formData.numberOfPeople}</span>
                 </div>
-
                 {formData.numberOfPeople >= 4 && (
                   <div className={`${styles.priceRow} ${styles.discount}`}>
                     <span>Group Discount (10%)</span>
-                    <span>
-                      -$
-                      {Math.round(
-                        formData.basePrice * formData.numberOfPeople * 0.1,
-                      )}
-                    </span>
+                    <span>-${Math.round(formData.basePrice * formData.numberOfPeople * 0.1)}</span>
                   </div>
                 )}
-
                 <hr />
-
                 <div className={`${styles.priceRow} ${styles.total}`}>
                   <span>Total Amount</span>
                   <span>${totalPrice}</span>
@@ -375,72 +301,45 @@ function Booking() {
               </div>
             )}
 
-            <button
-              type="submit"
-              className={styles.btnPrimary}
-              disabled={!formData.tourId}
-            >
+            <button type="submit" className={styles.btnPrimary} disabled={!formData.tourId}>
               Proceed to Payment →
             </button>
           </form>
         ) : (
           <div className={styles.paymentConfirmation}>
             <h2>Confirm Your Booking</h2>
-
             <div className={styles.confirmationDetails}>
               <div className={styles.detailRow}>
-                <strong>Tour:</strong>
-                <span>{formData.tourName}</span>
+                <strong>Tour:</strong><span>{formData.tourName}</span>
               </div>
               <div className={styles.detailRow}>
                 <strong>Date:</strong>
-                <span>
-                  {formData.dateFrom}{" "}
-                  {formData.dateTo && `to ${formData.dateTo}`}
-                </span>
+                <span>{formData.dateFrom} {formData.dateTo && `to ${formData.dateTo}`}</span>
               </div>
               <div className={styles.detailRow}>
-                <strong>Guests:</strong>
-                <span>{formData.numberOfPeople} people</span>
+                <strong>Guests:</strong><span>{formData.numberOfPeople} people</span>
               </div>
               <div className={styles.detailRow}>
-                <strong>Name:</strong>
-                <span>{formData.name}</span>
+                <strong>Name:</strong><span>{formData.name}</span>
               </div>
               <div className={styles.detailRow}>
-                <strong>Email:</strong>
-                <span>{formData.email}</span>
+                <strong>Email:</strong><span>{formData.email}</span>
               </div>
               <div className={styles.detailRow}>
                 <strong>Location:</strong>
-                <span>
-                  {formData.region ? `${formData.region}, ` : ""}
-                  {formData.country}
-                </span>
+                <span>{formData.region ? `${formData.region}, ` : ""}{formData.country}</span>
               </div>
-
               <hr />
-
               <div className={styles.totalAmount}>
                 <strong>Total Amount:</strong>
                 <span className={styles.amount}>${totalPrice}</span>
               </div>
             </div>
-
             <div className={styles.buttonGroup}>
-              <button
-                onClick={() => setShowPayment(false)}
-                className={styles.btnSecondary}
-                disabled={loading}
-              >
+              <button onClick={() => setShowPayment(false)} className={styles.btnSecondary} disabled={loading}>
                 ← Back to Edit
               </button>
-
-              <button
-                onClick={handlePayment}
-                className={styles.btnPrimary}
-                disabled={loading}
-              >
+              <button onClick={handlePayment} className={styles.btnPrimary} disabled={loading}>
                 {loading ? "Processing..." : "Pay Now with Stripe 💳"}
               </button>
             </div>

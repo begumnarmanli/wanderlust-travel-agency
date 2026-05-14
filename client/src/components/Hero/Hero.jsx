@@ -1,3 +1,4 @@
+import { FaArrowDown } from "react-icons/fa";
 import styles from "./Hero.module.css";
 
 function Hero() {
@@ -5,7 +6,7 @@ function Hero() {
 
   return (
     <>
-      <link rel="preload" as="image" href={heroImageUrl} fetchpriority="high" />
+      <link rel="preload" as="image" href={heroImageUrl} fetchPriority="high" />
 
       <section
         className={styles.hero}
@@ -23,23 +24,17 @@ function Hero() {
           </p>
 
           <div className={styles.heroActions}>
-            <a
-              href="#destinations"
-              className={`${styles.btn} ${styles.btnPrimary}`}
-            >
+            <a href="#destinations" className={`${styles.btn} ${styles.btnPrimary}`}>
               Explore Destinations
             </a>
-            <a
-              href="/register"
-              className={`${styles.btn} ${styles.btnSecondary}`}
-            >
+            <a href="/register" className={`${styles.btn} ${styles.btnSecondary}`}>
               Join Now
             </a>
           </div>
         </div>
 
         <div className={styles.scrollDown}>
-          <i className="fas fa-arrow-down"></i>
+          <FaArrowDown />
         </div>
       </section>
     </>

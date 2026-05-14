@@ -217,12 +217,11 @@
   box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
 }
 
-.imageContent i {
+.imageContent svg {
   color: #fff;
   font-size: 5rem;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 15px;
+  margin: 0 auto 20px auto;
+  display: block;
 }
 
 .imageContent p {
@@ -373,12 +372,6 @@
   width: fit-content;
   margin: 0 auto 20px auto;
   gap: 6px;
-}
-
-.ratingBox .stars i {
-  color: #ffc107;
-  font-size: 0.9rem;
-  margin-right: 3px;
 }
 
 .ratingNumber {
@@ -674,10 +667,9 @@
     justify-content: center;
   }
 
-  .imageContent i {
-    font-size: 8rem;
-    margin-bottom: 24px;
-    padding: 15px;
+  .imageContent svg {
+    font-size: 12rem;
+    margin: 0 auto 24px auto;
   }
 
   .imageContent p {
@@ -751,10 +743,11 @@
     gap: 8px;
   }
 
-  .ratingBox .stars i {
-    font-size: 1rem;
-    margin-right: 5px;
-  }
+.ratingBox .stars svg {
+  color: #ffc107;
+  font-size: 0.9rem;
+  margin-right: 3px;
+}
 
   .ratingNumber {
     font-size: 1rem;

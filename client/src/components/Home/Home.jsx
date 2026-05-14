@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Hero from "../Hero/Hero";
+import { FaGlobe, FaStar, FaArrowLeft, FaArrowRight, FaPlane, FaShip } from "react-icons/fa";
 import styles from "./Home.module.css";
 
 const Home = () => {
@@ -158,7 +159,7 @@ const Home = () => {
         <div className={styles.aboutContainer}>
           <div className={styles.aboutImageColumn}>
             <div className={styles.imageContent}>
-              <i className="fas fa-globe"></i>
+              <FaGlobe />
               <p>15+ Years of Excellence</p>
             </div>
           </div>
@@ -222,11 +223,11 @@ const Home = () => {
                 >
                   <div className={styles.ratingBox}>
                     <div className={styles.stars}>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
                     </div>
                     <span className={styles.ratingNumber}>{t.rating}</span>
                   </div>
@@ -254,13 +255,13 @@ const Home = () => {
                 className={`${styles.arrowBtn} ${styles.prevBtn}`}
                 onClick={prevSlide}
               >
-                <i className="fas fa-arrow-left"></i>
+                <FaArrowLeft />
               </button>
               <button
                 className={`${styles.arrowBtn} ${styles.nextBtn}`}
                 onClick={nextSlide}
               >
-                <i className="fas fa-arrow-right"></i>
+                <FaArrowRight />
               </button>
             </div>
           </div>
@@ -269,8 +270,8 @@ const Home = () => {
 
       {/* CTA BANNER */}
       <section className={styles.ctaBanner}>
-        <i className={`fas fa-plane ${styles.planeIcon}`}></i>
-        <i className={`fas fa-ship ${styles.shipIcon}`}></i>
+        <FaPlane className={styles.planeIcon} />
+        <FaShip className={styles.shipIcon} />
         <div className={styles.ctaContainer}>
           <h2>Ready for Your Next Great Adventure?</h2>
           <p>
