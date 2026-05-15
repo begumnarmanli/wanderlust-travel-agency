@@ -18,6 +18,12 @@ React ve Node.js ile geliştirilmiş full-stack bir seyahat acentesi web uygulam
 ### Mobil
 ![Mobil](screenshots/wanderLust-mobil-tr.webp)
 
+### Admin Paneli
+![Admin Dashboard](screenshots/admin-dashboard.webp)
+![Admin Rezervasyonlar](screenshots/admin-reservations.webp)
+![Admin Kullanıcılar](screenshots/admin-users.webp)
+![Admin İletişim Bilgisi](screenshots/admin-contact-info.webp)
+
 ---
 
 ## ✨ Özellikler
@@ -102,8 +108,7 @@ VITE_STRIPE_PUBLIC_KEY=stripe_public_anahtar
 
 ```bash
 # Backend'i çalıştır (root dizininden)
-cd server
-npm start
+npm run dev
 
 # Frontend'i çalıştır (client/ dizininden)
 cd client

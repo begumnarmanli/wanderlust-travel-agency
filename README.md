@@ -18,6 +18,12 @@ A full-stack travel agency web application built with React and Node.js. Users c
 ### Mobile
 ![Mobile](screenshots/wanderLust-mobil-en.webp)
 
+### Admin Panel
+![Admin Dashboard](screenshots/admin-dashboard.webp)
+![Admin Reservations](screenshots/admin-reservations.webp)
+![Admin Users](screenshots/admin-users.webp)
+![Admin Contact Info](screenshots/admin-contact-info.webp)
+
 ---
 
 ## ✨ Features
@@ -102,8 +108,7 @@ VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
 
 ```bash
 # Run backend (from root)
-cd server
-npm start
+npm run dev
 
 # Run frontend (from client/)
 cd client
