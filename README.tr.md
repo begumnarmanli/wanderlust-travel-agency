@@ -19,10 +19,12 @@ React ve Node.js ile geliştirilmiş full-stack bir seyahat acentesi web uygulam
 ![Mobil](screenshots/wanderLust-mobil-tr.webp)
 
 ### Admin Paneli
-![Admin Dashboard](screenshots/admin-dashboard.webp)
-![Admin Rezervasyonlar](screenshots/admin-reservations.webp)
-![Admin Kullanıcılar](screenshots/admin-users.webp)
-![Admin İletişim Bilgisi](screenshots/admin-contact-info.webp)
+<div align="center">
+  <img src="screenshots/admin-dashboard.webp" width="48%">
+  <img src="screenshots/admin-reservations.webp" width="48%">
+  <img src="screenshots/admin-users.webp" width="48%">
+  <img src="screenshots/admin-contact-info.webp" width="48%">
+</div>
 
 ---
 

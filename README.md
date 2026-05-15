@@ -19,10 +19,12 @@ A full-stack travel agency web application built with React and Node.js. Users c
 ![Mobile](screenshots/wanderLust-mobil-en.webp)
 
 ### Admin Panel
-![Admin Dashboard](screenshots/admin-dashboard.webp)
-![Admin Reservations](screenshots/admin-reservations.webp)
-![Admin Users](screenshots/admin-users.webp)
-![Admin Contact Info](screenshots/admin-contact-info.webp)
+<div align="center">
+  <img src="screenshots/admin-dashboard.webp" width="48%">
+  <img src="screenshots/admin-reservations.webp" width="48%">
+  <img src="screenshots/admin-users.webp" width="48%">
+  <img src="screenshots/admin-contact-info.webp" width="48%">
+</div>
 
 ---
 
